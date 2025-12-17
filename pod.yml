@@ -2,7 +2,7 @@
 -name: create a pod in kubernets
  host: all
  gather_facs: no
- collections: 
+ collections:
     - community.kubernetes
 
 -
@@ -17,7 +17,7 @@
          namespace: default
        spec:
          containers:
-           -name: container-01 
+           -name: container-01
             image: ubuntu:latest
             command: ["sleep", "3600"]
            -name: container-02
