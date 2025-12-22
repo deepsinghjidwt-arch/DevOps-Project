@@ -1,26 +1,10 @@
 ---
 -name: create a pod in kubernets
- host: all
+ host: localhost
  gather_facs: no
  collections:
-    - community.kubernetes
--
+    - local
 
-   task: Create a simple nginx pod
-   k8s:
-     state: present
-     definition:
-       apiVersion: v1
-       kind: pod
-       metadata:
-         name: deepak-pod
-         namespace: default
-       spec:
-         containers:
-           -name: container-01
-            image: ubuntu:latest
-            command: ["sleep", "3600"]
-           -name: container-02
-            image: ubuntu:latest
-            command: ["sleep","3600"]
-            
+   tasks:
+       - name: apply pad manifest
+         shell: kubectl apply -f Pod.yaml
