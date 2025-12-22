@@ -1,12 +1,13 @@
 ---
 - name: Create a Pod in Kubernetes
-  hosts: all
+  hosts: localhost
+  connection: local
   gather_facts: no
   collections:
     - community.kubernetes
 
   tasks:
-    - name: Create a simple nginx pod
+    - name: Create pod
       k8s:
         state: present
         definition:
