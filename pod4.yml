@@ -3,8 +3,6 @@
   hosts: localhost
   connection: local
   gather_facts: no
-  vars:
-    ansible_python_interpreter: /home/ubuntu/k8s-venv/bin/python
   collections:
     - community.kubernetes
 
