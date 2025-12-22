@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: croma-pod
+  namespace: default
+  labels:
+    app: croma
+spec:
+  containers:
+    - name: deepak-01
+      image: ubuntu:latest
+      command: ["sleep", "3600"]
+
+    - name: shahid-02
+      image: ubuntu:latest
+      command: ["sleep", "3600"]
